@@ -58,7 +58,16 @@ const random_mens_first_name   = () => random_from(mens_first_name_data),
       random_first_name        = () => random_from(first_name_data),
       random_last_name         = () => random_from(last_name_data),
 
-      random_name              = () => `${random_first_name()} ${random_last_name()}`;
+      random_name              = () => `${random_first_name()} ${random_last_name()}`,
+      is_name                  = (name) => {
+        if(first_name_data[name] || last_name_data[name]) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      };
+
 
 
 
@@ -80,6 +89,8 @@ module.exports = {
     last_name_data,
     random_last_name,
 
-    random_name
+    random_name,
+
+    is_name
 
 };
